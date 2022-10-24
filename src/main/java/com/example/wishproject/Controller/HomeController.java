@@ -1,6 +1,6 @@
 package com.example.wishproject.Controller;
 
-//import com.example.mysql.service.WishService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

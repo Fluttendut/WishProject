@@ -1,7 +1,6 @@
 package com.example.wishproject.Controller;
 
-//import com.example.mysql.model.Wish;
-//import com.example.mysql.service.WishService;
+
 import com.example.wishproject.model.Wish;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

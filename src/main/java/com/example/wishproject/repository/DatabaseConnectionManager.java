@@ -15,13 +15,13 @@ import java.sql.SQLException;
         //metoder
         public static Connection getConnection()
         {
-            hostname = "wishlistdatabasekea.mysql.database.azure.com";
+            hostname = "jdbc:mysql://wishlistdatabasekea.mysql.database.azure.com";
             username = "MEM";
             password = "Databasesjov12345";
 
             try
             {
-                conn = DriverManager.getConnection(hostname, username, password);
+                conn = DriverManager.getConnection(hostname,username, password);
             }
             catch (SQLException e){
                 System.out.println("connection to database failed!");
