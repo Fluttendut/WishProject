@@ -10,16 +10,5 @@ public class HtmlController {
     public String index() {
         return "index";
     }
-    @GetMapping("/todays_waste_tomorrows_power")
-    public String twtp() {
-        return "twtp";
-    }
-    @GetMapping("/boardgame")
-    public String boardgame() {
-        return "boardgame";
-    }
-    @GetMapping("/calculate")
-    public String calculator() {
-        return "calculator";
-    }
+
 }
