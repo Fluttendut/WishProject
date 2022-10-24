@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+    <title>Wish</title>
+    <link rel="stylesheet" href="stylesheetindex.css">
+</head>
+<body>
+<audio autoplay src="Song.mp3" type="audio/mpeg"></audio>
+  <header>
+    <!-- <img id="test" src="test.png"></a> -->
+      <div id="login">
+      <form action="/" method="post">
+    <title>Redirection</title>
+      <h1 id="blinkfuck">Fuck ønskeskyen! </h1>
+        <script type="text/javascript">
+          var blink =
+                  document.getElementById('blinkfuck');
+
+          setInterval(function () {
+            blink.style.opacity =
+                    (blink.style.opacity == 0 ? 1 : 0);
+          }, 1500);
+        </script>
+
+      <label type="login">Login</label>
+      <input type="text" name="email" placeholder="Enter your email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" oninvalid="this.setCustomValidity('Invalid email: @ or . is missing')" onkeyup="setCustomValidity('')"> <br>
+      <input type="text" name="email" placeholder="Enter your password">
+      <button type="submit">Submit</button><br>
+      </form>
+      </div>
+  </header>
+</body>
+</html>
