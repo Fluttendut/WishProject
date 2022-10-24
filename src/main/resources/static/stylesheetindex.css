@@ -4,5 +4,5 @@ body {background-image: url("wishlistimg.jpg")}
 #blinkfuck {margin-bottom: 5%}
 label {text-align: center; font-size: 70%}
 #login {padding-bottom: 10%; padding-top: 1%}
-input, button {text-align: center; font-size: 75%}
+input, button {text-align: center; font-size: 75%;}
 
