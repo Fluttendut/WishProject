@@ -1,4 +1,4 @@
-body {background-size: auto; width: 1024px; background-image: url("wishlistimg.jpg")}
+body {background-size: auto; width: auto; background-image: url("wishlistimg.jpg")}
 
 header {background-color: white; margin-left: 75%; width: 40%; margin-top: 211px; font-size: 37px;text-align: center; border: 2px solid black}
 #blinkfuck {margin-bottom: 10px}
