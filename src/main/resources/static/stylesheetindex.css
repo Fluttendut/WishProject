@@ -1,9 +1,7 @@
 body {background-image: url("wishlistimg.jpg")}
 
-#boksone {background-color: white; margin-left: 39%; width: 20%; margin-top: 13%; font-size: 230%;text-align: center; border: 2px solid black; padding-bottom: 1%}
-#bokstwo {background-color: white; margin-left: 39%; width: 20%; margin-top: 13%; font-size: 230%;text-align: center; border: 2px solid black; padding-bottom: 1%}
+#boks {background-color: white; margin-left: 39%; width: 20%; margin-top: 13%; font-size: 230%;text-align: center; border: 2px solid black; padding-bottom: 1%}
 #blinkfuck {margin-bottom: 5%}
-#blinkfucktwo {margin-bottom: 5%}
 label {text-align: center; font-size: 70%}
 #login {padding-bottom: 10%; padding-top: 1%;}
 input, button {text-align: center; font-size: 75%;}
