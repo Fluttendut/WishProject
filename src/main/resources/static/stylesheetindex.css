@@ -1,7 +1,7 @@
-body {background-size: auto; width: 1024px; background-image: url("wishlisting.jpg")}
+body {background-size: auto; width: 1024px; background-image: url("wishlistimg.jpg")}
 
 header {background-color: white; margin-left: 75%; width: 40%; margin-top: 211px; font-size: 37px;text-align: center; border: 2px solid black}
 #blinkfuck {margin-bottom: 10px}
 label {text-align: center; font-size: 25px}
 #login {padding-bottom: 10%; padding-top: 1%}
-input, button {text-align: center; font-size: 28px;}
+input, button {text-align: center; font-size: 28px}
