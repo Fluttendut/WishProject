@@ -14,9 +14,9 @@ public class HomeController
     private WishService service = new WishService();
 
     @GetMapping("/create")
-    public String index()
+    public String wishywashy()
     {
-        return "index";
+        return "wishywashy";
     }
 
     @PostMapping("/create")
@@ -30,7 +30,7 @@ public class HomeController
 
 
     @GetMapping("/wishes")
-    public String students(Model model)
+    public String wishes(Model model)
     {
         model.addAttribute("Wishes",service.getAllWishes());
         return "Wishes";

@@ -16,13 +16,13 @@ public class WishController
     WishService service = new WishService();
 
 
-    @GetMapping("/")
-    public List<Wish> index()
+    @GetMapping("/listOfWishes")
+    public List<Wish> listOfWishes()
     {
         return service.getAllWishes();
     }
 
-    @GetMapping("/student")
+    @GetMapping("/getWish")
     public Wish getWish(@RequestParam int id)
     {
         return service.getWish(id);
