@@ -1,38 +1,48 @@
 package com.example.wishproject.Controller;
 
 
+import com.example.wishproject.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.context.request.WebRequest;
 import com.example.wishproject.service.WishService;
-
+import com.example.wishproject.model.LoginAttempt;
 @Controller
-public class HomeController
-{
+public class HomeController {
     private WishService service = new WishService();
+    private LoginService loginService = new LoginService();
+
 
     @GetMapping("/create")
-    public String wishywashy()
-    {
+    public String wishywashy() {
         return "wishywashy";
     }
 
     @PostMapping("/create")
-    public String create(WebRequest req)
-    {
+    public String create(WebRequest req) {
         service.create(req);
 
         return "redirect:/";
     }
 
 
-
     @GetMapping("/wishes")
-    public String wishes(Model model)
-    {
-        model.addAttribute("Wishes",service.getAllWishes());
+    public String wishes(Model model) {
+        model.addAttribute("Wishes", service.getAllWishes());
         return "Wishes";
     }
+
+    @PostMapping("/login")
+    public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt) {
+        if(loginService.login(loginAttempt.getEmail(),loginAttempt.getPassword())){
+            return "ok";
+        }
+        else {
+            return "Fail";
+        }
+    }
+
 }
