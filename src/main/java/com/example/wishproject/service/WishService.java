@@ -1,7 +1,6 @@
 package com.example.wishproject.service;
 
-//import com.example.mysql.model.Student;
-//import com.example.mysql.repository.StudentsRepository;
+import com.example.wishproject.dataTransferObject.WishDTO;
 import com.example.wishproject.model.Wish;
 import org.springframework.web.context.request.WebRequest;
 import com.example.wishproject.repository.WishRepository;
@@ -12,14 +11,15 @@ public class WishService
 {
     WishRepository repo = new WishRepository();
 
-    public List<Wish> getAllWishes()
+    public List<WishDTO> getAllWishes()
     {
-        return repo.getAllWishes();
+        return WishDTO.from(repo.getAllWishes());
     }
 
-    public Wish getWish(int id)
+    public WishDTO getWish(int id)
     {
-        return repo.getWish(id);
+         Wish wish = repo.getWish(id);
+         return WishDTO.from(wish);
     }
 
     public void create(WebRequest req)

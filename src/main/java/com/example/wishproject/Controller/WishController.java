@@ -1,6 +1,7 @@
 package com.example.wishproject.Controller;
 
 
+import com.example.wishproject.dataTransferObject.WishDTO;
 import com.example.wishproject.model.Wish;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,13 +18,13 @@ public class WishController
 
 
     @GetMapping("/listOfWishes")
-    public List<Wish> listOfWishes()
+    public List<WishDTO> listOfWishes()
     {
         return service.getAllWishes();
     }
 
     @GetMapping("/getWish")
-    public Wish getWish(@RequestParam int id)
+    public WishDTO getWish(@RequestParam int id)
     {
         return service.getWish(id);
     }

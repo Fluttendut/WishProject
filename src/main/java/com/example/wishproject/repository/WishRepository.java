@@ -1,6 +1,6 @@
 package com.example.wishproject.repository;
 
-//import com.example.mysql.model.Wish;
+
 import com.example.wishproject.model.Wish;
 
 import java.sql.Connection;

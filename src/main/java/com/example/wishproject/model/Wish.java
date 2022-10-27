@@ -71,12 +71,15 @@ public class Wish
     @Override
     public String toString()
     {
-        return "wish{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price ='" + price + '\'' +
-                ", reserved=" + reserved +
-                '}';
-    }
+        if(reserved == true){
+            return name + ", " + price + "kr." +
+                    ", " +  "Wish is reserved";
+        } else {
+            return name + ", " + price + "kr." +
+                    ", " + "Wish is not reserved";
+        }
+
+
+}
 
 }
