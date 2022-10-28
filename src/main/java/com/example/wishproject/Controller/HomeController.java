@@ -39,11 +39,14 @@ public class HomeController {
         }
     }
 
+    /*
     @GetMapping()
     public String deleteWish(int wishId) {
         repository.deleteWish(wishId);
         return "loggedInWishlist";
     }
+
+     */
 
 
 
