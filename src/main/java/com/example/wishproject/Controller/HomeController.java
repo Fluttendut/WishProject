@@ -2,6 +2,7 @@ package com.example.wishproject.Controller;
 
 
 
+import com.example.wishproject.repository.WishRepository;
 import com.example.wishproject.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import java.util.List;
 public class HomeController {
     private WishService service = new WishService();
     private LoginService loginService = new LoginService();
+    private WishRepository repository = new WishRepository();
 
 
     public class HtmlController {
@@ -35,6 +37,12 @@ public class HomeController {
         else {
             return "redirect:/";
         }
+    }
+
+    @GetMapping()
+    public String deleteWish(int wishId) {
+        repository.deleteWish(wishId);
+        return "loggedInWishlist";
     }
 
 

@@ -82,15 +82,14 @@ public class WishRepository
         }
     }
 
-    public void deleteWish() throws RuntimeException
+
+
+    public void deleteWish(int wishId) throws RuntimeException
     {
         try
         {
             PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist where id=? ");
-
-
-            psts.
-            psts.executeUpdate();
+            psts.setInt(1,wishId);
 
         } catch (SQLException e)
         {
