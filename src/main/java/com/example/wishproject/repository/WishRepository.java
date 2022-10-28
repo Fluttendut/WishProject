@@ -82,5 +82,19 @@ public class WishRepository
         }
     }
 
+    public void deleteWish() throws RuntimeException
+    {
+        try
+        {
+            PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist where id=? ");
 
+
+            psts.
+            psts.executeUpdate();
+
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 }
