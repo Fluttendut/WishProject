@@ -66,18 +66,5 @@ public class Wish
     }
 
 
-    @Override
-    public String toString()
-    {
-        if(reserved == true){
-            return name + ", " + price + "kr." +
-                    ", " +  "Wish is reserved";
-        } else {
-            return name + ", " + price + "kr." +
-                    ", " + "Wish is not reserved";
-        }
-
-
-}
 
 }

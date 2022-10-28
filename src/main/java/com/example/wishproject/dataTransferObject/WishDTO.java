@@ -13,6 +13,7 @@ public class WishDTO {
 
 
     private WishDTO(Wish wish){
+        this.id= wish.getId();
         this.name=wish.getName();
         this.price= wish.getprice();
         //this following is a way of writing if statemtents, the 2 statements after the ? are executed in order if true and if false
