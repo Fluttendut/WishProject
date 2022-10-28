@@ -38,10 +38,10 @@ public class HomeController {
     @PostMapping("/login")
     public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt) {
         if(loginService.login(loginAttempt.getEmail(),loginAttempt.getPassword())){
-            return "ok";
+            return "loggedInWishlist";
         }
         else {
-            return "Fail";
+            return "redirect:/"; //TODO ret til annonym html
         }
     }
 

@@ -19,7 +19,7 @@ public class LoginRepository
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from passwordandusername where username=? and password=?");
+            PreparedStatement psts = conn.prepareStatement("select * from Wish.passwordandusername where username=? and password=?");
             psts.setString(1, username);
             psts.setString(2, password);
             ResultSet resultSet = psts.executeQuery();
