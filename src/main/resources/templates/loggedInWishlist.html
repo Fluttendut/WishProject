@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+
+
+
+<table class="container">
+    <tbody>
+    <tr th:each="wish :${wishList}">
+        <td th:text="${wish.name}"></td>
+        <td th:text="${wish.price}"></td>
+        <td th:text="${wish.reserved}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<button>Add Wish</button>
+<button>Delete Wish</button>
+<button id="LogoutButton">Logout</button>
+
 
 </body>
 </html>

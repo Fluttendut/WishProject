@@ -1,3 +1,18 @@
-body {background-image: url("wishlistimg.jpg")}
-#boks {background-color: white !important; width: 20% !important; margin-top: 13% !important; font-size: 230% !important;text-align: center !important; border: 2px solid black !important; padding-bottom: 1% !important}
-input, button {text-align: center !important; font-size: 75% !important;}
+body {
+    background-image: url("wishlistimg.jpg")
+}
+
+#boks {
+    background-color: white !important;
+    width: 20% !important;
+    margin-top: 13% !important;
+    font-size: 230% !important;
+    text-align: center !important;
+    border: 2px solid black !important;
+    padding-bottom: 1% !important
+}
+
+input, button {
+    text-align: center !important;
+    font-size: 75% !important;
+}
