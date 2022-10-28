@@ -15,7 +15,7 @@ public class WishDTO {
         this.name=wish.getName();
         this.price= wish.getprice();
         //this following is a way of writing if statemtents, the 2 statements after the ? are executed in order if true and if false
-        this.reserved= wish.isReserved() ? "this product is reserved" : "this product is not reserved";
+        this.reserved= wish.isReserved() ? " this product is reserved" : " this product is not reserved";
     }
 
     public static WishDTO from(Wish wish){
