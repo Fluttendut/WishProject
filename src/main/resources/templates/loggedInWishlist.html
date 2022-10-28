@@ -12,6 +12,7 @@
 <table class="container">
     <tbody>
     <tr th:each="wish :${wishList}">
+        <td th:text="${wish.id}"></td>
         <td th:text="${wish.name}"></td>
         <td th:text="${wish.price}"></td>
         <td th:text="${wish.reserved}"></td>

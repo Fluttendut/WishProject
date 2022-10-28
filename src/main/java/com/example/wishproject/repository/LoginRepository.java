@@ -1,14 +1,11 @@
 package com.example.wishproject.repository;
 
 
-import com.example.wishproject.model.Wish;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginRepository
 {

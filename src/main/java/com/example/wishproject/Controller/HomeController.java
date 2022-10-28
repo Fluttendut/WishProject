@@ -1,14 +1,13 @@
 package com.example.wishproject.Controller;
 
 
-import com.example.wishproject.dataTransferObject.WishDTO;
+
 import com.example.wishproject.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.context.request.WebRequest;
 import com.example.wishproject.service.WishService;
 import com.example.wishproject.model.LoginAttempt;
 
@@ -20,24 +19,12 @@ public class HomeController {
     private LoginService loginService = new LoginService();
 
 
-    @GetMapping("/create")
-    public String wishywashy() {
-        return "wishywashy";
-    }
-
-    @PostMapping("/create")
-    public String create(WebRequest req) {
-        service.create(req);
-
-        return "redirect:/";
-    }
-
-
-    @GetMapping("/wishes")
-    public String wishes(Model model) {
-        model.addAttribute("Wishes", service.getAllWishes());
-        return "Wishes";
-    }
+    public class HtmlController {
+        @GetMapping("/")
+        public String index() {
+            return "index";
+        }
+        }
 
     @PostMapping("/wishlist")
     public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt, Model model) {
@@ -46,17 +33,12 @@ public class HomeController {
             return "loggedInWishlist";
         }
         else {
-            return "redirect:/"; //TODO ret til annonym html
+            return "redirect:/";
         }
     }
 
 
 
-    @GetMapping("/wishList")
-    public String listOfWishes(Model model)
-    {
-        model.addAttribute("wishList",service.getAllWishes());
-        return "loggedInWishList";
-    }
+
 
 }

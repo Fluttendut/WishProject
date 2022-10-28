@@ -1,8 +1,6 @@
 package com.example.wishproject.model;
 
-//import com.example.mysql.service.WishService;
 
-import java.util.List;
 
 public class Wish
 {
