@@ -84,6 +84,7 @@ public class WishRepository
 
 
 
+
     public void deleteWish(int wishId) throws RuntimeException //TODO fix this
     {
         try
@@ -97,6 +98,8 @@ public class WishRepository
             throw new RuntimeException(e);
         }
     }
+
+
 
 
 }

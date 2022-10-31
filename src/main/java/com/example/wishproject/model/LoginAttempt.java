@@ -2,6 +2,14 @@ package com.example.wishproject.model;
 
 public class LoginAttempt {
 
+    String email;
+    String password;
+
+    public LoginAttempt(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -18,6 +26,5 @@ public class LoginAttempt {
         this.password = password;
     }
 
-    String email;
-    String password;
+
 }
