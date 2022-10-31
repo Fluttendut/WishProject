@@ -39,7 +39,7 @@ public class HomeController {
         }
     }
 
-    /*
+    /* TODO fix this!
     @GetMapping()
     public String deleteWish(int wishId) {
         repository.deleteWish(wishId);
@@ -47,6 +47,8 @@ public class HomeController {
     }
 
      */
+
+
 
 
 
