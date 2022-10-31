@@ -1,2 +1,55 @@
-#logoutButton
+#logoutButton {}
 
+body {background-image: url(https://blog.empuls.io/content/images/2022/01/work-anniversary-wishes.jpg);}
+
+center {
+    display: block;
+    text-align: -webkit-center;
+}
+#wishboks {
+    background-color: lightgray !important;
+    width: 38% !important;
+    margin-top: 13% !important;
+    font-size: 230% !important;
+    text-align: center !important;
+    border: 2px solid black !important;
+    padding-bottom: 1% !important;
+}
+
+div {
+    display: block;
+}
+
+element.style {
+    width: 1000px;
+    padding: 1px;
+    width: auto;
+    display: flex;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+tbody {
+    /*display: table-row-group;*/
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+style attribute {
+    font-size: 29px;
+    display: block;
+    word-wrap: break-word;
+    margin: 0 auto;
+}
