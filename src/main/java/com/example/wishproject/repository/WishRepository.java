@@ -21,15 +21,15 @@ public class WishRepository
         List<Wish> wishes = new ArrayList<>();
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist");
-            ResultSet resaultSet = psts.executeQuery();
-            while (resaultSet.next())
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist1");
+            ResultSet resultSet = psts.executeQuery();
+            while (resultSet.next())
             {
                 wishes.add(new Wish(
-                        resaultSet.getInt("id"),
-                        resaultSet.getString("name"),
-                        resaultSet.getDouble("price"),
-                        resaultSet.getBoolean("reserved")));
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getDouble("price"),
+                        resultSet.getBoolean("reserved")));
 
             }
         } catch (SQLException e)
@@ -46,7 +46,7 @@ public class WishRepository
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist where id=?"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist1 where id=?"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setInt(1, id);
             ResultSet resultSet = psts.executeQuery();
 
@@ -69,11 +69,27 @@ public class WishRepository
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist(name, price, reserved)values(?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
+            PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist1(name, price, reserved)values(?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setString(1, wish.getName());
             psts.setDouble(2, wish.getprice());
             psts.setBoolean(3, wish.isReserved());
 
+            psts.executeUpdate();
+
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    public void deleteWish(int wishId) throws RuntimeException //TODO fix this
+    {
+        try
+        {
+            PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist1 where id=? ");
+            psts.setInt(1,wishId);
             psts.executeUpdate();
 
         } catch (SQLException e)

@@ -1,8 +1,6 @@
 package com.example.wishproject.model;
 
-//import com.example.mysql.service.WishService;
 
-import java.util.List;
 
 public class Wish
 {
@@ -68,18 +66,5 @@ public class Wish
     }
 
 
-    @Override
-    public String toString()
-    {
-        if(reserved == true){
-            return name + ", " + price + "kr." +
-                    ", " +  "Wish is reserved";
-        } else {
-            return name + ", " + price + "kr." +
-                    ", " + "Wish is not reserved";
-        }
-
-
-}
 
 }

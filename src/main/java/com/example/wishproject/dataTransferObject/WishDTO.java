@@ -6,29 +6,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishDTO {
+    int id;
     String name;
     double price;
     String reserved;
 
 
-    private WishDTO(Wish wish){
-        this.name=wish.getName();
-        this.price= wish.getprice();
+    private WishDTO(Wish wish) {
+        this.id = wish.getId();
+        this.name = wish.getName();
+        this.price = wish.getprice();
         //this following is a way of writing if statemtents, the 2 statements after the ? are executed in order if true and if false
-        this.reserved= wish.isReserved() ? " this product is reserved" : " this product is not reserved";
+        this.reserved = wish.isReserved() ? "this product is reserved" : "this product is not reserved";
     }
 
-    public static WishDTO from(Wish wish){
+    public static WishDTO from(Wish wish) {
         return new WishDTO(wish);
     }
 
-    public static List<WishDTO> from(List<Wish> wishlist){
-        List<WishDTO> DTOS= new ArrayList<>();
-        for (Wish wish: wishlist)
-        {
+    public static List<WishDTO> from(List<Wish> wishlist) {
+        List<WishDTO> DTOS = new ArrayList<>();
+        for (Wish wish : wishlist) {
             DTOS.add(new WishDTO(wish));
         }
         return DTOS;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -56,6 +66,5 @@ public class WishDTO {
     }
 
 
-
-    }
+}
 

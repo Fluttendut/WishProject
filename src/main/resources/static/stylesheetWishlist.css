@@ -1,28 +1,2 @@
-
-#logoutButton {}
-
-body {background-image: url(https://blog.empuls.io/content/images/2022/01/work-anniversary-wishes.jpg); background-size: 100%}
-
-#wishboks {
-    background-color: lightgray !important;
-    width: 38% !important;
-    margin-top: 13% !important;
-    font-size: 230% !important;
-    text-align: center !important;
-    border: 2px solid black !important;
-    padding-bottom: 1% !important;
-    padding-left: 1%;
-    padding-right: 1%;
-}
-
-
-
-button {
-    width: 23%;
-    text-align: center !important;
-    font-size: 75% !important;
-}
-
-#wishtext {}
-
+#logoutButton
 
