@@ -8,7 +8,6 @@ public class Wish
     private String name;
     private double price;
     private boolean reserved;
-
     private int id_user;
 
     public Wish(int id, String name, double price, boolean reserved, int id_user)
@@ -20,11 +19,10 @@ public class Wish
         this.id_user = id_user;
     }
 
-    public Wish(String name, double price, boolean reserved, int id_user)
+    public Wish(String name, double price, int id_user)
     {
         this.name = name;
         this.price = price;
-        this.reserved = reserved;
         this.id_user = id_user;
     }
 

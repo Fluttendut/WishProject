@@ -67,7 +67,7 @@ public class WishRepository
         return null; // normalt ville den returnere et wish
     }
 
-    public void create(Wish wish) throws RuntimeException
+    public void createWish(Wish wish) throws RuntimeException
     {
         try
         {
@@ -75,6 +75,7 @@ public class WishRepository
             psts.setString(1, wish.getName());
             psts.setDouble(2, wish.getprice());
             psts.setBoolean(3, wish.isReserved());
+            psts.setInt(4,wish.getId_user());
 
 
             psts.executeUpdate();
@@ -88,7 +89,7 @@ public class WishRepository
 
 
 
-    public void deleteWish(int wishId) throws RuntimeException //TODO fix this
+    public void deleteWish(int wishId) throws RuntimeException
     {
         try
         {

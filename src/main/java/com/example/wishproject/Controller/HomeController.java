@@ -2,6 +2,7 @@ package com.example.wishproject.Controller;
 
 
 
+import com.example.wishproject.model.Wish;
 import com.example.wishproject.repository.WishRepository;
 import com.example.wishproject.service.LoginService;
 import org.springframework.stereotype.Controller;
@@ -39,14 +40,21 @@ public class HomeController {
         }
     }
 
-    /* TODO fix this!
-    @GetMapping()
-    public String deleteWish(int wishId) {
-        repository.deleteWish(wishId);
-        return "loggedInWishlist";
+
+    @PostMapping("/createWish")
+    public String createWish(@ModelAttribute Wish wish, Model model) {
+        model.addAttribute("id_user",wish.getId_user());
+        repository.createWish(wish);
+        return "redirect:/";
     }
 
-     */
+    @PostMapping("/deleteWish")
+    public String deleteWish(int wishId) {
+        repository.deleteWish(wishId);
+        return "redirect:/deleteWish";
+    }
+
+
 
 
 

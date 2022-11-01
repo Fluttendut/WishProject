@@ -27,13 +27,36 @@
         </table>
 
     <div id="knapper">
-        <button id="addbutton" type="button" class="btn btn-primary btn-lg">Add Wish</button>
-        <button id="deletebutton" type="button" class="btn btn-primary btn-lg">Delete Wish</button>
+        <div class="card">
+
+            <form action="/createWish" method="post">
+
+                <input type="text" name="WishBox" placeholder="Enter product name"
+
+                       onkeyup="setCustomValidity('')"> <br>
+                <input type="double" name="Price" placeholder="Price"> <br>
+                <input type="hidden" name="id_user" value="id_user">
+                <button id="addbutton" type="button" class="btn btn-primary btn-lg">Add Wish</button>
+                <br>
+            </form>
+        </div>
+        <div class="card">
+
+            <form action="/deleteWish" method="post">
+
+                <input type="int" name="id" placeholder="ID"> <br>
+
+                <button id="deletebutton" type="button" class="btn btn-primary btn-lg">Delete Wish</button>
+                <br>
+            </form>
+        </div>
+
         <button id="logoutbutton" type="button" class="btn btn-primary btn-lg">Logout</button>
     </div>
     </div>
 
     <img class="cheese" src="https://i.pinimg.com/originals/aa/4b/86/aa4b8627007e038763ed5061310ca497.png">
+
 
 
 </body>
