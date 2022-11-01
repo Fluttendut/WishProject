@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishDTO {
-    int id;
+    String id;
     String name;
     double price;
     String reserved;
@@ -33,11 +33,11 @@ public class WishDTO {
     }
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
