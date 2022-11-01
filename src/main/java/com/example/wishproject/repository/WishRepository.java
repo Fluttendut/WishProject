@@ -21,7 +21,7 @@ public class WishRepository
         List<Wish> wishes = new ArrayList<>();
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist1");
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist");
             ResultSet resultSet = psts.executeQuery();
             while (resultSet.next())
             {
@@ -29,7 +29,8 @@ public class WishRepository
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getDouble("price"),
-                        resultSet.getBoolean("reserved")));
+                        resultSet.getBoolean("reserved"),
+                        resultSet.getInt("id_user")));
 
             }
         } catch (SQLException e)
@@ -46,7 +47,7 @@ public class WishRepository
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist1 where id=?"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist where id=?"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setInt(1, id);
             ResultSet resultSet = psts.executeQuery();
 
@@ -56,7 +57,8 @@ public class WishRepository
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getDouble("price"),
-                        resultSet.getBoolean("reserved"));
+                        resultSet.getBoolean("reserved"),
+                        resultSet.getInt("id_user"));
             }
         } catch (SQLException e)
         {
@@ -69,10 +71,11 @@ public class WishRepository
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist1(name, price, reserved)values(?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
+            PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist(name, price, reserved,id_user) values(?,?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setString(1, wish.getName());
             psts.setDouble(2, wish.getprice());
             psts.setBoolean(3, wish.isReserved());
+
 
             psts.executeUpdate();
 
@@ -89,7 +92,7 @@ public class WishRepository
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist1 where id=? ");
+            PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist where id=? ");
             psts.setInt(1,wishId);
             psts.executeUpdate();
 

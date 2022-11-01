@@ -9,19 +9,23 @@ public class Wish
     private double price;
     private boolean reserved;
 
-    public Wish(int id, String name, double price, boolean reserved)
+    private int id_user;
+
+    public Wish(int id, String name, double price, boolean reserved, int id_user)
     {
         this.id = id;
         this.name = name;
         this.price = price;
         this.reserved = reserved;
+        this.id_user = id_user;
     }
 
-    public Wish(String name, double price, boolean reserved)
+    public Wish(String name, double price, boolean reserved, int id_user)
     {
         this.name = name;
         this.price = price;
         this.reserved = reserved;
+        this.id_user = id_user;
     }
 
 
@@ -65,6 +69,11 @@ public class Wish
         this.reserved = reserved;
     }
 
+    public int getId_user() {
+        return id_user;
+    }
 
-
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
 }
