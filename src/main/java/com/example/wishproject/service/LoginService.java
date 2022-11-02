@@ -12,8 +12,3 @@ public class LoginService
         return repo.login(username, password);
     }
 }
-
-
-//TODO HTMl / CSS
-
-//todo lav input felt i html hvor en "url" kan  postes til en specifik liste

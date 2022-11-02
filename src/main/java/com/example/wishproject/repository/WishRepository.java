@@ -21,15 +21,16 @@ public class WishRepository
         List<Wish> wishes = new ArrayList<>();
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist1");
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist");
             ResultSet resultSet = psts.executeQuery();
             while (resultSet.next())
             {
                 wishes.add(new Wish(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("name"),
-                        resultSet.getDouble("price"),
-                        resultSet.getBoolean("reserved")));
+                        resultSet.getInt("price"),
+                        resultSet.getBoolean("reserved"),
+                        resultSet.getInt("id_user")));
 
             }
         } catch (SQLException e)
@@ -41,22 +42,22 @@ public class WishRepository
     }
 
     //metode til kun at vælge en af emnerne i databasen
-
     public Wish getWish(int id)
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist1 where id=?"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist where id=?"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setInt(1, id);
             ResultSet resultSet = psts.executeQuery();
 
             if (resultSet.next())
             {
                 return new Wish(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("name"),
-                        resultSet.getDouble("price"),
-                        resultSet.getBoolean("reserved"));
+                        resultSet.getInt("price"),
+                        resultSet.getBoolean("reserved"),
+                        resultSet.getInt("id_user"));
             }
         } catch (SQLException e)
         {
@@ -65,14 +66,17 @@ public class WishRepository
         return null; // normalt ville den returnere et wish
     }
 
-    public void create(Wish wish) throws RuntimeException
+    public void createWish(Wish wish) throws RuntimeException
     {
+
         try
         {
-            PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist1(name, price, reserved)values(?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
+            PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist(name, price, reserved,id_user) values(?,?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setString(1, wish.getName());
-            psts.setDouble(2, wish.getprice());
+            psts.setInt(2, wish.getprice());
             psts.setBoolean(3, wish.isReserved());
+            psts.setInt(4,wish.getId_user());
+
 
             psts.executeUpdate();
 
@@ -82,15 +86,12 @@ public class WishRepository
         }
     }
 
-
-
-
-    public void deleteWish(int wishId) throws RuntimeException //TODO fix this
+    public void deleteWish(String wishId) throws RuntimeException
     {
         try
         {
-            PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist1 where id=? ");
-            psts.setInt(1,wishId);
+            PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist where id=? ");
+            psts.setString(1,wishId);
             psts.executeUpdate();
 
         } catch (SQLException e)

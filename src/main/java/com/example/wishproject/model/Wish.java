@@ -4,33 +4,37 @@ package com.example.wishproject.model;
 
 public class Wish
 {
-    private int id;
+    private String id;
     private String name;
-    private double price;
+    private int price;
     private boolean reserved;
+    private int id_user;
 
-    public Wish(int id, String name, double price, boolean reserved)
+    public Wish(String id, String name, int price, boolean reserved, int id_user)
     {
         this.id = id;
         this.name = name;
         this.price = price;
         this.reserved = reserved;
+        this.id_user = id_user;
     }
 
-    public Wish(String name, double price, boolean reserved)
+    public Wish(String name, int price, int id_user)
     {
         this.name = name;
         this.price = price;
-        this.reserved = reserved;
+        this.id_user = id_user;
     }
 
+    public Wish() {
+    }
 
-    public int getId()
+    public String getId()
     {
         return id;
     }
 
-    public void setId(int id)
+    public void setId(String id)
     {
         this.id = id;
     }
@@ -45,12 +49,12 @@ public class Wish
         this.name = name;
     }
 
-    public double getprice()
+    public int getprice()
     {
         return price;
     }
 
-    public void setEmail(double price)
+    public void setPrice(int price)
     {
         this.price = price;
     }
@@ -65,6 +69,11 @@ public class Wish
         this.reserved = reserved;
     }
 
+    public int getId_user() {
+        return id_user;
+    }
 
-
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
 }

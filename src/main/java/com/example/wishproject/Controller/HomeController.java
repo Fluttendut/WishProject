@@ -1,7 +1,7 @@
 package com.example.wishproject.Controller;
 
 
-
+import com.example.wishproject.model.Wish;
 import com.example.wishproject.repository.WishRepository;
 import com.example.wishproject.service.LoginService;
 import org.springframework.stereotype.Controller;
@@ -26,32 +26,53 @@ public class HomeController {
         public String index() {
             return "index";
         }
-        }
+    }
 
     @PostMapping("/wishlist")
     public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt, Model model) {
-        if(loginService.login(loginAttempt.getEmail(),loginAttempt.getPassword())){
-            model.addAttribute("wishList",service.getAllWishes());
+        if (loginService.login(loginAttempt.getEmail(), loginAttempt.getPassword())) {
+            model.addAttribute("wishList", service.getAllWishes());
             return "loggedInWishlist";
-        }
-        else {
+        } else {
             return "redirect:/";
         }
     }
 
-    /* TODO fix this!
-    @GetMapping()
-    public String deleteWish(int wishId) {
-        repository.deleteWish(wishId);
+    /*
+        @PostMapping("/createWish")
+        public String createWish(@ModelAttribute Model model, Wish wish) {
+            model.addAttribute("id_user",wish.getId_user());
+            repository.createWish(wish);
+            return "redirect:/";
+        }
+
+    @PostMapping("/createWish")
+    public String createWish(String name,double price) {
+        Wish wish = new Wish(name,price,-1);
+        model.addAttribute("id_user", wish.getId_user());
+        repository.createWish(wish);
+        return "redirect:/";
+    }
+     */
+    @PostMapping("/createWish")
+    public String createWish(@ModelAttribute Wish wish, Model model) {
+        repository.createWish(wish);
+        model.addAttribute("wishList", service.getAllWishes());
         return "loggedInWishlist";
     }
 
-     */
+    @PostMapping("/deleteWish")
+    public String deleteWish(@ModelAttribute Wish wish, String wishId, Model model) {
 
 
-
-
-
+        if(wishId.length()<1) {
+            model.addAttribute("wishList", service.getAllWishes());
+            return "loggedInWishlist";
+        } else
+        repository.deleteWish(wishId);
+        model.addAttribute("wishList", service.getAllWishes());
+        return "loggedInWishlist";
+    }
 
 
 }
