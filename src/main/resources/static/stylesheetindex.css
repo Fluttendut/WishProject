@@ -1,18 +1,24 @@
 body {
-    background-image: url("wishlistimg.jpg"); background-size: auto
+    background-size: 100%;
+    background-image: url("https://wallpapercave.com/wp/wp3218549.jpg")
 }
-
+.card {padding-bottom: 5%}
 #boks {
-    background-color: white ;
     width: 26%;
-    margin-top: 13%;
+    margin-top: 9%;
     font-size: 230%;
     text-align: center;
-    border: 2px solid black;
+
     padding-bottom: 1%
 }
 
 input, button {
     text-align: center;
     font-size: 75%
+}
+#blinkfuck{
+    font-size: 67px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FF10F0, 0 0 20px #FF10F0, 0 0 25px #FF10F0, 0 0 30px #FF10F0, 0 0 35px #FF10F0;
 }
