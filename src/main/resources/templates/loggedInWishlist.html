@@ -10,30 +10,32 @@
 </head>
 <body>
 
-    <div id="wishbox">
-        <table class="container">
-            <tbody>
-            <tr>
-                <td>Product</td>
-                <td>Price</td>
-                <td>Status</td>
-            </tr>
-            <tr th:each="wish :${wishList}">
-                <td th:text="${wish.name}"></td>
-                <td th:text="${wish.price}"></td>
-                <td th:text="${wish.reserved}"></td>
-            </tr>
-            </tbody>
-        </table>
+<div id="wishbox">
+    <table class="container">
+        <tbody>
+        <tr>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Status</td>
+        </tr>
+        <tr th:each="wish :${wishList}">
+            <td th:text="${wish.name}"></td>
+            <td th:text="${wish.price}"></td>
+            <td th:text="${wish.reserved}"></td>
+        </tr>
+        </tbody>
+    </table>
 
     <div id="knapper">
         <button id="addbutton" type="button" class="btn btn-primary btn-lg">Add Wish</button>
         <button id="deletebutton" type="button" class="btn btn-primary btn-lg">Delete Wish</button>
-        <button id="logoutbutton" type="button" class="btn btn-primary btn-lg">Logout</button>
+        <a id="logoutbutton" type="button" class="btn btn-primary btn-lg" href="/">Logout</a>
     </div>
-    </div>
+</div>
 
-    <img class="cheese" src="https://i.pinimg.com/originals/aa/4b/86/aa4b8627007e038763ed5061310ca497.png">
+<img id="clickhere" src="https://pngimage.net/wp-content/uploads/2018/05/click-here-arrow-png.png">
+<img class="whip" src="https://www.pngall.com/wp-content/uploads/11/Whip-Background-PNG.png">
+
 
 
 </body>
