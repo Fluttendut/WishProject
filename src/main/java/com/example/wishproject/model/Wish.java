@@ -4,13 +4,13 @@ package com.example.wishproject.model;
 
 public class Wish
 {
-    private String id;
+    private int id;
     private String name;
     private int price;
     private boolean reserved;
     private int id_user;
 
-    public Wish(String id, String name, int price, boolean reserved, int id_user)
+    public Wish(int id, String name, int price, boolean reserved, int id_user)
     {
         this.id = id;
         this.name = name;
@@ -29,12 +29,12 @@ public class Wish
     public Wish() {
     }
 
-    public String getId()
+    public int getId()
     {
         return id;
     }
 
-    public void setId(String id)
+    public void setId(int id)
     {
         this.id = id;
     }

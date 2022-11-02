@@ -2,6 +2,7 @@ package com.example.wishproject.repository;
 
 
 import com.example.wishproject.model.Wish;
+import com.example.wishproject.service.LoginService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +15,38 @@ public class WishRepository
 {
     private Connection conn = DatabaseConnectionManager.getConnection();
 
+    /*
+    public List<Wish> getUserWishes(String username)
+    {
+
+        List<Wish> wishes = new ArrayList<>();
+        try
+        {
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist where id_user = " +
+                                                                "(Select id_user from wish.passwordandusername where username = '" + ? + "'')");
+
+
+            psts.setInt(1, LoginService.selectUserID(username));
+            ResultSet resultSet = psts.executeQuery();
+            while (resultSet.next())
+            {
+                wishes.add(new Wish(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getInt("price"),
+                        resultSet.getBoolean("reserved"),
+                        resultSet.getInt("id_user")));
+
+            }
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        return wishes;
+    }
+
+     */
 
     public List<Wish> getAllWishes()
     {
@@ -26,7 +59,7 @@ public class WishRepository
             while (resultSet.next())
             {
                 wishes.add(new Wish(
-                        resultSet.getString("id"),
+                        resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getInt("price"),
                         resultSet.getBoolean("reserved"),
@@ -53,7 +86,7 @@ public class WishRepository
             if (resultSet.next())
             {
                 return new Wish(
-                        resultSet.getString("id"),
+                        resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getInt("price"),
                         resultSet.getBoolean("reserved"),
@@ -86,12 +119,12 @@ public class WishRepository
         }
     }
 
-    public void deleteWish(String wishId) throws RuntimeException
+    public void deleteWish(int wishId) throws RuntimeException
     {
         try
         {
             PreparedStatement psts = conn.prepareStatement("delete from wish.wishlist where id=? ");
-            psts.setString(1,wishId);
+            psts.setInt(1,wishId);
             psts.executeUpdate();
 
         } catch (SQLException e)

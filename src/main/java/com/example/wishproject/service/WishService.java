@@ -16,6 +16,14 @@ public class WishService
         return WishDTO.from(repo.getAllWishes());
     }
 
+    /*
+    public List<WishDTO> getUserWishes(String username)
+    {
+        return WishDTO.from(repo.getUserWishes(username));
+    }
+
+     */
+
     public WishDTO getWish(int id)
     {
          Wish wish = repo.getWish(id);

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class LoginRepository
 {
-    private Connection conn = DatabaseConnectionManager.getConnection();
+    private static Connection conn = DatabaseConnectionManager.getConnection();
 
 
     public Boolean login(String username, String password)
@@ -38,4 +38,18 @@ public class LoginRepository
     }
 
 
+    public static int getIDUser(String username) {
+        try {
+
+            PreparedStatement psts = conn.prepareStatement("select id_user from Wish.passwordandusername where username=?");
+            psts.setString(1,username);
+            psts.executeQuery();
+            ResultSet resultSet = psts.getResultSet();
+            return resultSet.getInt("id_user");
+
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 }

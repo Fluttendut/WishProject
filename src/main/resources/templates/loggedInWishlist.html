@@ -33,9 +33,9 @@
 
             <form action="/createWish" method="post">
 
-                <input type="text" name="name" placeholder="Enter product name">
-                <input type="text" name="price" placeholder="Price">
-                <input type="text" name="id_user" placeholder="User ID">
+                <input type="text" required name="name" placeholder="Enter product name">
+                <input type="number" required name="price" placeholder="Price" >
+                <input type="number" required name="id_user" placeholder="User ID">
                 <!-- <input type="hidden" name="id_user" value="id_user"> -->
                 <button id="addbutton" type="submit" class="btn btn-primary btn-lg">Add Wish</button>
                 <br>
@@ -46,7 +46,7 @@
 
             <form action="/deleteWish" method="post">
 
-                <input type="int" name="wishId" placeholder="ID">
+                <input type="int" required name="wishId" placeholder="ID">
 
                 <button id="deletebutton" type="submit" class="btn btn-primary btn-lg">Delete Wish</button>
                 <br>
