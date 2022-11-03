@@ -3,7 +3,6 @@ package com.example.wishproject.repository;
 
 import com.example.wishproject.model.User;
 import com.example.wishproject.model.Wish;
-import com.example.wishproject.service.LoginService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,7 +30,7 @@ public class WishRepository
                 wishes.add(new Wish(
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
-                        resultSet.getInt("price"),
+                        resultSet.getDouble("price"),
                         resultSet.getBoolean("reserved"),
                         resultSet.getInt("id_user")));
 
@@ -59,7 +58,7 @@ public class WishRepository
                 wishes.add(new Wish(
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
-                        resultSet.getInt("price"),
+                        resultSet.getDouble("price"),
                         resultSet.getBoolean("reserved"),
                         resultSet.getInt("id_user")));
 
@@ -86,7 +85,7 @@ public class WishRepository
                 return new Wish(
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
-                        resultSet.getInt("price"),
+                        resultSet.getDouble("price"),
                         resultSet.getBoolean("reserved"),
                         resultSet.getInt("id_user"));
             }
@@ -104,7 +103,7 @@ public class WishRepository
         {
             PreparedStatement psts = conn.prepareStatement("insert into wish.wishlist(name, price, reserved,id_user) values(?,?,?,?)"); // spørgsmålstegnet gør vores querry dynamisk i stedet for statisk
             psts.setString(1, wish.getName());
-            psts.setInt(2, wish.getprice());
+            psts.setDouble(2, wish.getprice());
             psts.setBoolean(3, wish.isReserved());
             psts.setInt(4,wish.getId_user());
 

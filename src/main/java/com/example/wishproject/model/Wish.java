@@ -6,11 +6,11 @@ public class Wish
 {
     private int id;
     private String name;
-    private int price;
+    private double price;
     private boolean reserved;
     private int id_user;
 
-    public Wish(int id, String name, int price, boolean reserved, int id_user)
+    public Wish(int id, String name, double price, boolean reserved, int id_user)
     {
         this.id = id;
         this.name = name;
@@ -19,7 +19,7 @@ public class Wish
         this.id_user = id_user;
     }
 
-    public Wish(String name, int price, int id_user)
+    public Wish(String name, double price, int id_user)
     {
         this.name = name;
         this.price = price;
@@ -49,12 +49,12 @@ public class Wish
         this.name = name;
     }
 
-    public int getprice()
+    public double getprice()
     {
         return price;
     }
 
-    public void setPrice(int price)
+    public void setPrice(double price)
     {
         this.price = price;
     }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.wishproject.service.WishService;
 import com.example.wishproject.model.LoginAttempt;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -30,10 +31,12 @@ public class HomeController {
     }
 
     @PostMapping("/wishlist")
-    public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt, Model model) {
+    public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt, Model model, HttpSession session) {
         User usr=loginService.returnUser(loginAttempt);
         if (usr!=null) {
+            session.setAttribute("user",usr);
             model.addAttribute("wishList", service.getUserWishes(usr));
+            model.addAttribute("user",usr);
 
             return "loggedInWishlist";
         } else {
@@ -42,18 +45,26 @@ public class HomeController {
     }
 
     @PostMapping("/createWish")
-    public String createWish(@ModelAttribute Wish wish, Model model) {
+    public String createWish(@ModelAttribute Wish wish, Model model, HttpSession session) {
+            User usr = (User)session.getAttribute("user");
             repository.createWish(wish);
-            model.addAttribute("wishList", service.getAllWishes());
+            model.addAttribute("wishList", service.getUserWishes(usr));
+            model.addAttribute("user",usr);
             return "loggedInWishlist";
     }
 
     @PostMapping("/deleteWish")
-    public String deleteWish(@ModelAttribute Wish wish, int wishId, Model model) {
+    public String deleteWish(@ModelAttribute Wish wish, int wishId, Model model, HttpSession session) {
+            User usr = (User)session.getAttribute("user");
             repository.deleteWish(wishId);
             model.addAttribute("wishList", service.getAllWishes());
+            model.addAttribute("user",usr);
             return "loggedInWishlist";
         }
 
+
+        //TODO guest login with reserve function
+        //TODO
+        //TODO
 
 }
