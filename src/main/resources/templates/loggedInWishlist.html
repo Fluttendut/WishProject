@@ -34,7 +34,11 @@
             <form action="/createWish" method="post">
 
                 <input type="text" required name="name" placeholder="Enter product name">
-                <input type="text" required name="price" placeholder="Price">
+                <input type="text" required name="price" placeholder="Price"
+                       pattern="[0-9]{1,9}"
+                       maxlength="9"
+                       oninvalid="this.setCustomValidity('Only enter numbers')"
+                       onkeyup="setCustomValidity('')">
                 <input type="number" hidden required name="id_user" th:value="${user.id_user}">
 
 
@@ -47,7 +51,10 @@
 
             <form action="/deleteWish" method="post">
 
-                <input type="int" required name="wishId" placeholder="ID">
+                <input type="int" required name="wishId" placeholder="Enter ID to delete"
+                       pattern="[0-9]{1,9}"
+                       oninvalid="this.setCustomValidity('Only enter ID number')"
+                       onkeyup="setCustomValidity('')">
 
                 <button id="deletebutton" type="submit" class="btn btn-primary btn-lg">Delete Wish</button>
                 <br>
