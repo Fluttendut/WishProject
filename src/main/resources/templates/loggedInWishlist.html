@@ -10,57 +10,53 @@
 </head>
 <body>
 
-    <div id="wishbox">
-        <table class="container">
-            <tbody>
-            <tr>
-                <td>ID</td>
-                <td>Product</td>
-                <td>Price</td>
-                <td>Status</td>
-            </tr>
-            <tr th:each="wish :${wishList}">
-                <td th:text="${wish.id}"></td>
-                <td th:text="${wish.name}"></td>
-                <td th:text="${wish.price}"></td>
-                <td th:text="${wish.reserved}"></td>
-            </tr>
-            </tbody>
-        </table>
+<div id="wishbox">
+    <table class="container">
+        <tbody>
+        <tr>
+            <td>ID</td>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Status</td>
+        </tr>
+        <tr th:each="wish :${wishList}">
+            <td th:text="${wish.id}"></td>
+            <td th:text="${wish.name}"></td>
+            <td th:text="${wish.price}"></td>
+            <td th:text="${wish.reserved}"></td>
+        </tr>
+        </tbody>
+    </table>
 
     <div id="knapper">
-        <div class="card">
-
-            <form action="/createWish" method="post">
-
-                <input type="text" required name="name" placeholder="Enter product name">
-                <input type="text" required name="price" placeholder="Price">
-                <input type="number" hidden required name="id_user" th:value="${user.id_user}">
 
 
-                <button id="addbutton" type="submit" class="btn btn-primary btn-lg">Add Wish</button>
-                <br>
-            </form>
-        </div>
+        <form action="/createWish" method="post">
 
-        <div class="card">
+            <input type="text" required name="name" placeholder="Enter product name">
+            <input type="text" required name="price" placeholder="Price">
+            <input type="number" hidden required name="id_user" th:value="${user.id_user}">
 
-            <form action="/deleteWish" method="post">
+            <button id="addbutton" type="submit" class="btn btn-primary btn-lg">Add Wish</button>
+            <br>
+        </form>
 
-                <input type="int" required name="wishId" placeholder="ID">
 
-                <button id="deletebutton" type="submit" class="btn btn-primary btn-lg">Delete Wish</button>
-                <br>
-            </form>
-        </div>
+        <form action="/deleteWish" method="post">
+
+            <input type="int" required name="wishId" placeholder="ID">
+
+            <button id="deletebutton" type="submit" class="btn btn-primary btn-lg">Delete Wish</button>
+            <br>
+        </form>
+
 
         <button id="logoutbutton" type="button" class="btn btn-primary btn-lg">Logout</button>
     </div>
-    </div>
+</div>
 
 <img id="clickhere" src="https://pngimage.net/wp-content/uploads/2018/05/click-here-arrow-png.png">
 <img class="whip" src="https://www.pngall.com/wp-content/uploads/11/Whip-Background-PNG.png">
-
 
 
 </body>
