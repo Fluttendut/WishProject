@@ -61,7 +61,9 @@ div {
 }
 #knapper {
     margin-left: 9%
+    margin-top: 1%;
 }
+
 .btn-primary {
     background-color: rgb(238, 130, 238);
     border-color: rgb(238, 130, 238)
