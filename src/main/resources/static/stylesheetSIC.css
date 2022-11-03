@@ -1,0 +1,92 @@
+body {
+    background-image: url(https://cdn.wallpapersafari.com/76/85/bKBuEa.jpg);
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+center {
+    display: block;
+}
+div {
+    display: block;
+}
+* {
+    box-sizing: border-box;
+}
+.column {
+    width: 33.33%;
+    padding: 5px;
+    margin-right: 7%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin-right: 8%;
+}
+
+
+
+#knapper {
+    margin-left: 1.5%;
+    margin-top: 1%;
+}
+
+.btn-primary {
+    background-color: rgb(238, 130, 238);
+    border-color: rgb(238, 130, 238)
+}
+#sic{
+    margin-top: 5%;
+    font-size: 67px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FF10F0, 0 0 20px #FF10F0, 0 0 25px #FF10F0, 0 0 30px #FF10F0, 0 0 35px #FF10F0;
+}
+
+#wishbox {
+    width: 43%;
+    margin-top: 2%;
+    background-color: lightgray;
+    font-size: 230%;
+    border: 2px solid black;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+table {
+    width: 1000px;
+    padding: 1px;
+    width: auto;
+    display: flex;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+
+tbody {
+    vertical-align: middle;
+    border-color: inherit;
+    font-size: 29px;
+    display: block;
+    word-wrap: break-word;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 0 5px;
+    border: 1px solid black;
+    background-color: white;
+}
+tr {
+    display: flex;
+    display: table-row;
+    width: max-content;
+    vertical-align: inherit;
+    border-color: inherit;
+}
