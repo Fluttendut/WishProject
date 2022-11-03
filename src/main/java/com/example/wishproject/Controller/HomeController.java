@@ -23,11 +23,16 @@ public class HomeController {
     private WishRepository repository = new WishRepository();
 
 
-    public class HtmlController {
+    public class htmlController {
         @GetMapping("/")
         public String index() {
             return "index";
         }
+    }
+
+    @GetMapping("/sic")
+    public String sic() {
+        return "SIC";
     }
 
     @PostMapping("/wishlist")
@@ -61,6 +66,8 @@ public class HomeController {
             model.addAttribute("user",usr);
             return "loggedInWishlist";
         }
+
+
 
 
         //TODO guest login with reserve function
