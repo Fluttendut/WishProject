@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://wallpaper.dog/large/10744013.png);
+    background-image: url(https://cdn.wallpapersafari.com/76/85/bKBuEa.jpg);
     background-size: 100%;
     display: flex;
     flex-direction: column;
@@ -12,9 +12,6 @@ center {
 div {
     display: block;
 }
-
-
-
 * {
     box-sizing: border-box;
 }
@@ -33,16 +30,14 @@ div {
 
 
 .whip:hover {
-    transform: scale(1.5);
     transform: rotate(360deg);
     filter: grayscale(0);
 }
 .whip {
     display: block;
-    margin-top: -9%;
     margin-left: auto;
-    margin-right: 38%;
-    width: 13%;
+    margin-right: 45%;
+    width: 14%;
     top: -50px;
     left: -35px;
     z-index: 999;
@@ -52,21 +47,14 @@ div {
     -webkit-transition-timing-function: ease;
     filter: grayscale(100);
 }
-#clickhere {
-    margin-top: 4%;
-    width: 15%;
-    margin-right: 14%;
-}
-
 #addbutton, #deletebutton, #logoutbutton {
     width: 28%;
 }
 #addbutton {
-    margin-top: 1%;
+    margin-top: -8%;
 }
 #knapper {
-    align-content: center;
-    margin-left: 9%;
+    margin-left: 1.5%;
     margin-top: 1%;
 }
 
@@ -76,15 +64,15 @@ div {
 }
 
 #wishbox {
-    width: 55%;
+    width: 43%;
     background-color: lightgray;
     font-size: 230%;
     border: 2px solid black;
     padding-top: 1%;
     padding-bottom: 1%;
+    margin-bottom: 2%;
 }
 table {
-    /*display: table;*/
     width: 1000px;
     padding: 1px;
     width: auto;
@@ -94,13 +82,10 @@ table {
     text-indent: initial;
     border-spacing: 2px;
     border-color: grey;
-    /*border-collapse: collapse;*/
 }
 
 
 tbody {
-    /*display: table-row-group;*/
-
     vertical-align: middle;
     border-color: inherit;
     font-size: 29px;
@@ -120,5 +105,4 @@ tr {
     width: max-content;
     vertical-align: inherit;
     border-color: inherit;
-    /*border-collapse: collapse  ;*/
 }
