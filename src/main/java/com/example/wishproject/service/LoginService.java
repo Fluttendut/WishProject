@@ -1,5 +1,7 @@
 package com.example.wishproject.service;
 
+import com.example.wishproject.model.LoginAttempt;
+import com.example.wishproject.model.User;
 import com.example.wishproject.repository.LoginRepository;
 
 
@@ -7,14 +9,9 @@ public class LoginService
 {
     LoginRepository repo = new LoginRepository();
 
-    public static int selectUserID(String username) {
+    public User returnUser(LoginAttempt loginAttempt) {
 
-
-        return LoginRepository.getIDUser(username);
+        return repo.returnUser(loginAttempt);
     }
 
-    public Boolean login(String username, String password)
-    {
-        return repo.login(username, password);
-    }
 }

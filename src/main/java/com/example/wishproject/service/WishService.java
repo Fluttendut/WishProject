@@ -1,6 +1,7 @@
 package com.example.wishproject.service;
 
 import com.example.wishproject.dataTransferObject.WishDTO;
+import com.example.wishproject.model.User;
 import com.example.wishproject.model.Wish;
 import org.springframework.web.context.request.WebRequest;
 import com.example.wishproject.repository.WishRepository;
@@ -16,13 +17,13 @@ public class WishService
         return WishDTO.from(repo.getAllWishes());
     }
 
-    /*
-    public List<WishDTO> getUserWishes(String username)
+
+    public List<WishDTO> getUserWishes(User user)
     {
-        return WishDTO.from(repo.getUserWishes(username));
+        return WishDTO.from(repo.getUserWishes(user));
     }
 
-     */
+
 
     public WishDTO getWish(int id)
     {

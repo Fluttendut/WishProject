@@ -1,6 +1,7 @@
 package com.example.wishproject.repository;
 
 
+import com.example.wishproject.model.User;
 import com.example.wishproject.model.Wish;
 import com.example.wishproject.service.LoginService;
 
@@ -15,18 +16,15 @@ public class WishRepository
 {
     private Connection conn = DatabaseConnectionManager.getConnection();
 
-    /*
-    public List<Wish> getUserWishes(String username)
+
+    public List<Wish> getUserWishes(User user)
     {
 
         List<Wish> wishes = new ArrayList<>();
         try
         {
-            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist where id_user = " +
-                                                                "(Select id_user from wish.passwordandusername where username = '" + ? + "'')");
-
-
-            psts.setInt(1, LoginService.selectUserID(username));
+            PreparedStatement psts = conn.prepareStatement("select * from wish.wishlist where id_user =?");
+            psts.setInt(1, user.getId_user());
             ResultSet resultSet = psts.executeQuery();
             while (resultSet.next())
             {
@@ -46,7 +44,7 @@ public class WishRepository
         return wishes;
     }
 
-     */
+
 
     public List<Wish> getAllWishes()
     {

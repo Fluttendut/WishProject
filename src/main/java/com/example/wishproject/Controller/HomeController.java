@@ -1,6 +1,7 @@
 package com.example.wishproject.Controller;
 
 
+import com.example.wishproject.model.User;
 import com.example.wishproject.model.Wish;
 import com.example.wishproject.repository.WishRepository;
 import com.example.wishproject.service.LoginService;
@@ -30,27 +31,15 @@ public class HomeController {
 
     @PostMapping("/wishlist")
     public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt, Model model) {
-        if (loginService.login(loginAttempt.getEmail(), loginAttempt.getPassword())) {
-            model.addAttribute("wishList", service.getAllWishes());
-            model.addAttribute("id_user");
-            return "loggedInWishlist";
-        } else {
-            return "redirect:/";
-        }
-    }
-    /*
-    @PostMapping("/wishlist")
-    public String loginAttempt(@ModelAttribute LoginAttempt loginAttempt, Model model, String username) {
-        if (loginService.login(loginAttempt.getEmail(), loginAttempt.getPassword())) {
-            model.addAttribute("wishList", service.getUserWishes(username));
-            model.addAttribute("id_user");
-            return "loggedInWishlist";
-        } else {
-            return "redirect:/";
-        }
-    }
+        User usr=loginService.returnUser(loginAttempt);
+        if (usr!=null) {
+            model.addAttribute("wishList", service.getUserWishes(usr));
 
-     */
+            return "loggedInWishlist";
+        } else {
+            return "redirect:/";
+        }
+    }
 
     @PostMapping("/createWish")
     public String createWish(@ModelAttribute Wish wish, Model model) {
@@ -66,8 +55,5 @@ public class HomeController {
             return "loggedInWishlist";
         }
 
-// TODO connecting til at kunne hente et id_user på frontend (login model)
-// TODO html skal have id_user fra model
-// TODO
 
 }
